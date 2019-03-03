@@ -78,6 +78,43 @@ teamDragons.count
 teamSharks.count
 
 
+var letters: [String] = []
+let teams = [teamRaptors, teamDragons, teamSharks]
+var num : Int = 0
+// Prints error if not changed
+var practiceDate: String = "ERROR, Practice date was not changed from default value"
+var teamName: String = "ERROR, Team name was not changed from default value"
+var count = 0
+for team in teams {
+    // Then we know it's teamRaptors since that is first
+    if count == 0 {
+        practiceDate = "March 18, 1pm"
+        teamName = "Team Raptors"
+    // Then we know it's teamDragons since that is second in loop
+    } else if count == 1 {
+        practiceDate = "March 17, 1pm"
+        teamName = "Team Dragons"
+    // Then we know it's teamSharks since that is last
+    } else {
+        practiceDate = "March 17, 3pm"
+        teamName = "Team Sharks"
+    }
+    
+    for player in team {
+        let letter = "Dear \(player["parents"]!), \(player["Name"]!) is on \(teamName) first practice is on \(practiceDate)"
+        letters.append(letter)
+    }
+    count += 1
+}
+
+
+for eachLetter in letters {
+    print(eachLetter)
+}
+//Checks letter count
+letters.count
+
+
 
 
 
